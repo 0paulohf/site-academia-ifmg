@@ -6,43 +6,37 @@ class clsConexao{
     private $usuario;
     private $senha;
     private $banco;
-    private $sonexao;
+    private $conexao;
 
     #propriedades
     #host
-
     public function setHost($valor){
         $this->host = $valor;
     }
-
-        public function getHost( ){
+    public function getHost( ){
         return $this->host;
     }
-
-
-      public function setUsuario($valor){
+    public function setUsuario($valor){
         $this->usuario = $valor;
     }
 
-        public function getUsuario( ){
+    public function getUsuario( ){
         return $this->usuario;
     }
-
-
-      public function setSenha($valor){
+    public function setSenha($valor){
         $this->senha = $valor;
     }
-
-        public function getSenha( ){
+    public function getSenha( ){
         return $this->senha;
     }
-
-          public function setBanco($valor){
+    public function setBanco($valor){
         $this->banco = $valor;
     }
-
-        public function getBanco( ){
+    public function getBanco( ){
         return $this->banco;
+    }
+    public function getConexao(){
+        return $this->conexao;
     }
 
     #metado
@@ -51,25 +45,19 @@ class clsConexao{
         $this->host = 'localhost';
         $this->usuario='root';
         $this->senha= '';
-        $this->banco = 'bd_acesso';
+        $this->banco = 'bd_academia';
         $this->conecta();
     }
 
     public function conecta(){
-        $this->sonexao = mysqli_connect($this-> host,
+        $this->conexao = mysqli_connect($this-> host,
                                         $this-> usuario,
                                         $this-> senha,
                                         $this-> banco);
     }
-
     public function executaSQL($sql){
-        $resposta = mysqli_query($this->sonexao, $sql) or die(mysqli_error($this->sonexao));
+        $resposta = mysqli_query($this->conexao, $sql) or die(mysqli_error($this->conexao));
         return $resposta;
     }
-
-
-
-
 }
-
 ?>
