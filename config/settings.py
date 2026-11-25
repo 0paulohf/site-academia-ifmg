@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'academia',
 ]
 
+AUTH_USER_MODEL = 'academia.Usuario'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
