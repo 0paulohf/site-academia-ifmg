@@ -1,0 +1,13 @@
+criada a base do django
+
+criada tabela usuario no banco
+
+criado um usuario admin
+
+academia/admin.py ->listagem de usuários e formulários de criação e edição que utilizam os mecanismos de senha do Django.
+
+criado sistema de cadastro de usuario.
+
+criacao do cadastro de alunos pelo instrutor
+
+academia/forms.py
